@@ -1,4 +1,32 @@
-﻿//метод заполнения массива и вывода в консоль.
+﻿/* Задача 34: Задайте массив заполненный случайными 
+положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
+
+[345, 897, 568, 234] -> 2 */
+
+int[] arr = FillRandomArray(5, 100, 1000);
+
+int countEvenNumber = 0;
+foreach (var item in arr)
+{
+	if (item % 2 == 0)
+		countEvenNumber++;
+}
+PrintArray(arr);
+Console.WriteLine($"Количество четных чисел в массве - {countEvenNumber}");
+
+
+
+
+
+
+
+
+
+
+
+
+
+//метод заполнения массива и вывода в консоль.
 
 int[] FillRandomArray(int _l, int _start = 10, int _end = 100)
 {
@@ -16,5 +44,6 @@ void PrintArray(int[] arr)
 	{
 		Console.Write(item + " ");
 	}
-	Console.Write("]");
+	Console.Write("]\n");
 }
+
