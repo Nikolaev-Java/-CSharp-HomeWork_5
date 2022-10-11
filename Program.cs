@@ -1,4 +1,28 @@
-﻿//метод заполнения массива и вывода в консоль.
+﻿/* Задача 38: Задайте массив вещественных чисел. 
+Найдите разницу между максимальным и минимальным элементов массива.
+
+[3 7 22 2 78] -> 76 */
+
+
+double[] arrReal = FillRandomArrayReal(5);
+double diffOfMaxAndMin = 0;
+double max = arrReal[0];
+double min = arrReal[0];
+for (int i = 1; i < arrReal.Length; i++)
+{
+	if (arrReal[i] > max)
+	{
+		max = arrReal[i];
+	}
+	else if (arrReal[i] < min)
+	{
+		min = arrReal[i];
+	}
+}
+diffOfMaxAndMin = Math.Round(max - min, 2);
+PrintArrayReal(arrReal);
+Console.WriteLine($"Разница между максимальным элементом массива - {max} и минимальным - {min} равна = {diffOfMaxAndMin}");
+//метод заполнения массива и вывода в консоль.
 
 int[] FillRandomArray(int _l, int _start = 10, int _end = 100)
 {
@@ -34,5 +58,5 @@ void PrintArrayReal(double[] arr)
 	{
 		Console.Write(item + " | ");
 	}
-	Console.Write("]");
+	Console.Write("]\n");
 }
